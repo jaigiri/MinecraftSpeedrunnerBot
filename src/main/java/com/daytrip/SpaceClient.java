@@ -1,8 +1,10 @@
 package com.daytrip;
 
+import com.daytrip.event.Event;
 import com.daytrip.event.Events;
 import com.daytrip.event.impl.EventKeypress;
 import com.daytrip.event.impl.EventRegister;
+import com.daytrip.event.impl.EventTick;
 import com.daytrip.gui.SpaceMenuScreen;
 import com.daytrip.hack.HackManager;
 import com.daytrip.hack.impl.HackBetterPVP;
@@ -10,10 +12,14 @@ import com.daytrip.hack.impl.HackBowAimbot;
 import com.daytrip.hack.impl.HackNoKnockback;
 import com.daytrip.hack.impl.HackXray;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.util.InputMappings;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.glfw.GLFW;
 
+/**
+ * The main client class
+ */
 public class SpaceClient {
 	private final Logger logger = LogManager.getLogger();
 
@@ -35,6 +41,13 @@ public class SpaceClient {
 				if (eventKeypress.keyCode == GLFW.GLFW_KEY_RIGHT_SHIFT) {
 					Minecraft.getInstance().showScreen(new SpaceMenuScreen());
 				}
+			}
+		});
+
+		Events.on(EventTick.class, event -> {
+			if (InputMappings.isKeyDown(Minecraft.getInstance().getMainWindow().getHandle(), GLFW.GLFW_KEY_G)) {
+				logger.info("Body: " + Minecraft.getInstance().player.rotationYaw);
+				logger.info("Head: " + Minecraft.getInstance().player.rotationYawHead);
 			}
 		});
 

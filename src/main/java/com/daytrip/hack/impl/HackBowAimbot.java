@@ -7,6 +7,7 @@ import com.daytrip.hack.Hack;
 import com.daytrip.util.Null;
 import net.minecraft.command.arguments.EntityAnchorArgument;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.vector.Vector3d;
 import org.lwjgl.glfw.GLFW;
 
 import static com.daytrip.util.OldValue.*;
@@ -35,8 +36,8 @@ public class HackBowAimbot extends Hack {
 				return;
 			}
 
-			minecraft.player.lookAt(EntityAnchorArgument.Type.FEET, target.getPositionVec());
-			minecraft.player.rotationPitch += (-0.19183673d * minecraft.player.getDistance(target)) + 0.930612244897957d;
+			minecraft.player.lookAt(EntityAnchorArgument.Type.FEET, target.getBoundingBox().getCenter());
+			minecraft.player.rotationPitch += (-0.17507289d * minecraft.player.getDistance(target.getBoundingBox().getCenter())) + -0.5225947521865901d;
 		});
 	}
 }

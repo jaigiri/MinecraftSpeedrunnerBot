@@ -38,7 +38,7 @@ public class CollisionBoxDebugRenderer implements DebugRenderer.IDebugRenderer {
       IVertexBuilder ivertexbuilder = bufferIn.getBuffer(RenderType.getLines());
 
       for(VoxelShape voxelshape : this.collisionData) {
-         WorldRenderer.drawVoxelShapeParts(matrixStackIn, ivertexbuilder, voxelshape, -camX, -camY, -camZ, 1.0F, 1.0F, 1.0F, 1.0F);
+         WorldRenderer.drawVoxelShapeParts(matrixStackIn, ivertexbuilder, voxelshape, -camX, -camY, -camZ);
       }
 
    }

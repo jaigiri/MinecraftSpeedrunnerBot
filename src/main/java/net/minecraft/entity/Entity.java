@@ -1133,6 +1133,13 @@ public abstract class Entity implements INameable, ICommandSource {
 		this.lastTickPosZ = z;
 	}
 
+	public float getDistance(Vector3d entityIn) {
+		float f = (float) (this.getPosX() - entityIn.x);
+		float f1 = (float) (this.getPosY() - entityIn.y);
+		float f2 = (float) (this.getPosZ() - entityIn.z);
+		return MathHelper.sqrt(f * f + f1 * f1 + f2 * f2);
+	}
+
 	public float getDistance(Entity entityIn) {
 		float f = (float) (this.getPosX() - entityIn.getPosX());
 		float f1 = (float) (this.getPosY() - entityIn.getPosY());

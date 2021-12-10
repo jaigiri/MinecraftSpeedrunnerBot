@@ -1,0 +1,106 @@
+---- Minecraft Crash Report ----
+// Who set us up the TNT?
+
+Time: 11/13/21 5:25 PM
+Description: keyPressed event handler
+
+java.lang.NumberFormatException: For input string: "/goto"
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:569)
+	at java.lang.Integer.parseInt(Integer.java:615)
+	at net.minecraft.client.entity.player.ClientPlayerEntity.sendChatMessage(ClientPlayerEntity.java:273)
+	at net.minecraft.client.gui.screen.Screen.sendMessage(Screen.java:296)
+	at net.minecraft.client.gui.screen.Screen.sendMessage(Screen.java:288)
+	at net.minecraft.client.gui.screen.ChatScreen.keyPressed(ChatScreen.java:96)
+	at net.minecraft.client.KeyboardListener.lambda$onKeyEvent$4(KeyboardListener.java:295)
+	at net.minecraft.client.KeyboardListener$$Lambda$4787/0x00000000b26fe780.run(Unknown Source)
+	at net.minecraft.client.gui.screen.Screen.wrapScreenError(Screen.java:406)
+	at net.minecraft.client.KeyboardListener.onKeyEvent(KeyboardListener.java:289)
+	at net.minecraft.client.KeyboardListener.lambda$null$7(KeyboardListener.java:379)
+	at net.minecraft.client.KeyboardListener$$Lambda$6076/0x0000000000000000.run(Unknown Source)
+	at net.minecraft.util.concurrent.ThreadTaskExecutor.execute(ThreadTaskExecutor.java:86)
+	at net.minecraft.client.KeyboardListener.lambda$setupCallbacks$8(KeyboardListener.java:378)
+	at net.minecraft.client.KeyboardListener$$Lambda$2390/0x00000000ae24b490.invoke(Unknown Source)
+	at org.lwjgl.glfw.GLFWKeyCallbackI.callback(GLFWKeyCallbackI.java:37)
+	at org.lwjgl.system.JNI.invokeV(Native Method)
+	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3101)
+	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:89)
+	at net.minecraft.client.MainWindow.flipFrame(MainWindow.java:304)
+	at net.minecraft.client.Minecraft.runGameLoop(Minecraft.java:994)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:646)
+	at net.minecraft.client.main.Main.main(Main.java:184)
+	at mcp.client.Start.main(Start.java:17)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at java.lang.NumberFormatException.forInputString(NumberFormatException.java:65)
+	at java.lang.Integer.parseInt(Integer.java:569)
+	at java.lang.Integer.parseInt(Integer.java:615)
+	at net.minecraft.client.entity.player.ClientPlayerEntity.sendChatMessage(ClientPlayerEntity.java:273)
+	at net.minecraft.client.gui.screen.Screen.sendMessage(Screen.java:296)
+	at net.minecraft.client.gui.screen.Screen.sendMessage(Screen.java:288)
+	at net.minecraft.client.gui.screen.ChatScreen.keyPressed(ChatScreen.java:96)
+	at net.minecraft.client.KeyboardListener.lambda$onKeyEvent$4(KeyboardListener.java:295)
+	at net.minecraft.client.KeyboardListener$$Lambda$4787/0x00000000b26fe780.run(Unknown Source)
+
+-- Affected screen --
+Details:
+	Screen name: net.minecraft.client.gui.screen.ChatScreen
+Stacktrace:
+	at net.minecraft.client.gui.screen.Screen.wrapScreenError(Screen.java:406)
+	at net.minecraft.client.KeyboardListener.onKeyEvent(KeyboardListener.java:289)
+	at net.minecraft.client.KeyboardListener.lambda$null$7(KeyboardListener.java:379)
+	at net.minecraft.client.KeyboardListener$$Lambda$6076/0x0000000000000000.run(Unknown Source)
+	at net.minecraft.util.concurrent.ThreadTaskExecutor.execute(ThreadTaskExecutor.java:86)
+	at net.minecraft.client.KeyboardListener.lambda$setupCallbacks$8(KeyboardListener.java:378)
+	at net.minecraft.client.KeyboardListener$$Lambda$2390/0x00000000ae24b490.invoke(Unknown Source)
+	at org.lwjgl.glfw.GLFWKeyCallbackI.callback(GLFWKeyCallbackI.java:37)
+	at org.lwjgl.system.JNI.invokeV(Native Method)
+	at org.lwjgl.glfw.GLFW.glfwPollEvents(GLFW.java:3101)
+	at com.mojang.blaze3d.systems.RenderSystem.flipFrame(RenderSystem.java:89)
+
+-- Affected level --
+Details:
+	All players: 1 total; [ClientPlayerEntity['Player436'/3, l='ClientLevel', x=-87.38, y=4.00, z=-102.45]]
+	Chunk stats: Client Chunk Cache: 841, 576
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (-80,4,-112), Chunk: (at 0,0,0 in -5,-7; contains blocks -80,0,-112 to -65,255,-97), Region: (-1,-1; contains chunks -32,-32 to -1,-1, blocks -512,0,-512 to -1,255,-1)
+	Level time: 1130 game time, 1130 day time
+	Server brand: vanilla
+	Server type: Integrated singleplayer server
+Stacktrace:
+	at net.minecraft.client.world.ClientWorld.fillCrashReport(ClientWorld.java:440)
+	at net.minecraft.client.Minecraft.addGraphicsAndWorldToCrashReport(Minecraft.java:2049)
+	at net.minecraft.client.Minecraft.run(Minecraft.java:662)
+	at net.minecraft.client.main.Main.main(Main.java:184)
+	at mcp.client.Start.main(Start.java:17)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.16.5
+	Minecraft Version ID: 1.16.5
+	Operating System: Windows 8.1 (amd64) version 6.3
+	Java Version: 1.8.0_282, AdoptOpenJDK
+	Java VM Version: Eclipse OpenJ9 VM (JRE 1.8.0 Windows 8.1 amd64-64-Bit Compressed References 20210120_972 (JIT enabled, AOT enabled)
+OpenJ9   - 345e1b09e
+OMR      - 741e94ea8
+JCL      - ab07c6a8fd based on jdk8u282-b08), Eclipse OpenJ9
+	Memory: 238197064 bytes (227 MB) / 626982912 bytes (597 MB) up to 17160339456 bytes (16365 MB)
+	CPUs: 12
+	JVM Flags: 3 total; -Xoptionsfile=C:\Users\Jai Giri\.jdks\adopt-openj9-1.8.0_282\jre\bin\compressedrefs\options.default -Xlockword:mode=default,noLockword=java/lang/String,noLockword=java/util/MapEntry,noLockword=java/util/HashMap$Entry,noLockword=org/apache/harmony/luni/util/ModifiedMap$Entry,noLockword=java/util/Hashtable$Entry,noLockword=java/lang/invoke/MethodType,noLockword=java/lang/invoke/MethodHandle,noLockword=java/lang/invoke/CollectHandle,noLockword=java/lang/invoke/ConstructorHandle,noLockword=java/lang/invoke/ConvertHandle,noLockword=java/lang/invoke/ArgumentConversionHandle,noLockword=java/lang/invoke/AsTypeHandle,noLockword=java/lang/invoke/ExplicitCastHandle,noLockword=java/lang/invoke/FilterReturnHandle,noLockword=java/lang/invoke/DirectHandle,noLockword=java/lang/invoke/ReceiverBoundHandle,noLockword=java/lang/invoke/DynamicInvokerHandle,noLockword=java/lang/invoke/FieldHandle,noLockword=java/lang/invoke/FieldGetterHandle,noLockword=java/lang/invoke/FieldSetterHandle,noLockword=java/lang/invoke/StaticFieldGetterHandle,noLockword=java/lang/invoke/StaticFieldSetterHandle,noLockword=java/lang/invoke/IndirectHandle,noLockword=java/lang/invoke/InterfaceHandle,noLockword=java/lang/invoke/VirtualHandle,noLockword=java/lang/invoke/PrimitiveHandle,noLockword=java/lang/invoke/InvokeExactHandle,noLockword=java/lang/invoke/InvokeGenericHandle,noLockword=java/lang/invoke/VarargsCollectorHandle,noLockword=java/lang/invoke/ThunkTuple -Xjcl:jclse29
+	Launched Version: mcp
+	Backend library: LWJGL version 3.2.2 build 10
+	Backend API: NVS 300/PCIe/SSE2 GL version 3.3.0, NVIDIA Corporation
+	GL Caps: Using framebuffer using OpenGL 3.0
+	Using VBOs: Yes
+	Is Modded: Very likely; Jar signature invalidated
+	Type: Client (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: 
+	Current Language: English (US)
+	CPU: 12x Intel(R) Xeon(R) CPU E5-1660 0 @ 3.30GHz

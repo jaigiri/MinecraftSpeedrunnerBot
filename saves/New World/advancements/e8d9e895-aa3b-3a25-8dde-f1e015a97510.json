@@ -1,0 +1,21 @@
+{
+  "minecraft:recipes/misc/iron_ingot_from_blasting": {
+    "criteria": {
+      "has_iron_ore": "2021-11-13 17:33:00 -0800"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/iron_ingot": {
+    "criteria": {
+      "has_iron_ore": "2021-11-13 17:33:00 -0800"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:plains": "2021-11-13 17:32:55 -0800"
+    },
+    "done": false
+  },
+  "DataVersion": 2586
+}

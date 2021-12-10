@@ -1,0 +1,5 @@
+JVM Args:    
+Run Args:    "--client", "C:\Users\Jai Giri\Documents\MCP-Reborn-1.16\projects\mcp\build\mcp\stripClient\output.jar", "--server", "C:\Users\Jai Giri\Documents\MCP-Reborn-1.16\projects\mcp\build\mcp\stripServer\output.jar", "--ann", "1.16.5", "--output", "C:\Users\Jai Giri\Documents\MCP-Reborn-1.16\projects\mcp\build\mcp\merge\output.jar", "--inject", "false"
+Classpath:   C:\Users\Jai Giri\.gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\mergetool\1.1.1\mergetool-1.1.1-fatjar.jar
+Working Dir: C:\Users\Jai Giri\Documents\MCP-Reborn-1.16\projects\mcp\build\mcp\merge
+Main Class:  net.minecraftforge.mergetool.ConsoleMerger
